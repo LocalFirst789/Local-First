@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF; /* Blue background color */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.cart-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.8); /* Blue transparent background */
+    color: white;
+    transition: left 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    margin: 10px 0;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.side-menu .close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+}
+
+.side-menu .close-button:hover {
+    color: #ddd;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.slider-title {
+    margin-bottom: 20px;
+}
+
+.hot-stock {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.limited-time {
+    color: red;
+    font-size: 18px;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 600px; /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+.slide-wrapper {
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
