@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Local First</title>
+</head>
+<body>
+  
+  
+    <header>
+        <div class="logo">Local First</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+    <div class="sliding-menu" id="slidingMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+<section class="featured-products">
+    
+
+</html>
+
+<style>
+
+.featured-products {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden; /* Hide overflow for sliding effect */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.product {
+    min-width: 100%; /* Show one product at a time */
+    box-sizing: border-box;
+    padding: 20px; /* Padding for products */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(51, 51, 51, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+.featured-products {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between grid items */
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Stack in one column on smaller screens */
+    }
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white; /* White background for products */
+    transition: transform 0.3s;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.product p {
+    margin: 10px 0 20px;
+    font-size: 16px;
+    color: #333; /* Darker color for pricing */
+}
+
+.product a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    flex-grow: 1;
+    font-size: 24px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.sliding-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen */
+    width: 230px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: left 0.3s ease;
+    padding: 20px;
+}
+
+.sliding-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sliding-menu li {
+    margin: 15px 0;
+}
+
+.sliding-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('Background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center -40%; /* Adjust this value to move the image down */
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent dark background for header */
+    color: white;
+}
+
+.logo {
+    flex-grow: 1;
+    font-size: 24px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.sliding-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    transition: left 0.3s ease;
+    padding: 20px;
+}
+
+.sliding-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sliding-menu li {
+    margin: 15px 0;
+}
+
+.sliding-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+</style>
+
+<script>
+
+function toggleMenu() {
+    const menu = document.getElementById('slidingMenu');
+    const isOpen = menu.style.left === '0px';
+    menu.style.left = isOpen ? '-300px' : '0px'; // Slide in/out
+}
+
+let currentSlide = 0;
+
+function moveSlide(direction) {
+    const slides = document.querySelectorAll('.product');
+    const totalSlides = slides.length;
+
+    currentSlide += direction;
+
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1; // Wrap to last slide
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0; // Wrap to first slide
+    }
+
+    const carouselInner = document.getElementById('carouselInner');
+    const offset = -currentSlide * 100; // Calculate offset
+    carouselInner.style.transform = `translateX(${offset}%)`;
+}
+
+
+</script>
