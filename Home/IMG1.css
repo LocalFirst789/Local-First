@@ -1,0 +1,313 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    line-height: 1.6;
+    padding-top: 50px; /* Space for fixed header */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00f;
+}
+
+.menu-button {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon:before, .menu-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon:before {
+    top: -8px;
+}
+
+.menu-icon:after {
+    top: 8px;
+}
+
+.menu-button.open .menu-icon {
+    transform: rotate(45deg);
+}
+
+.menu-button.open .menu-icon:before {
+    transform: rotate(-90deg) translateX(-5px);
+}
+
+.menu-button.open .menu-icon:after {
+    transform: rotate(90deg) translateX(-5px);
+}
+
+.main {
+    padding: 20px;
+}
+
+.hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.search {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.search input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.search button {
+    padding: 10px 20px;
+    background-color: #00f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search button:hover {
+    background-color: #0044cc;
+}
+
+.featured-products {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.featured-products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1.2rem;
+    color: #00f;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Reset and general styling */
+
+/* ... previous styles remain unchanged ... */
+
+/* Menu sliding animation */
+.menu-open main {
+    transform: translateX(250px); /* Adjust this value to match your menu width */
+    transition: transform 0.3s ease;
+}
+
+.menu-open footer {
+    transform: translateX(250px); /* Adjust this value to match your menu width */
+    transition: transform 0.3s ease;
+}
+
+/* Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00f;
+}
+
+.menu-button {
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon:before,
+.menu-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon:before {
+    top: -8px;
+}
+
+.menu-icon:after {
+    top: 8px;
+}
+
+.menu-button.open .menu-icon {
+    transform: rotate(45deg);
+}
+
+.menu-button.open .menu-icon:before {
+    transform: rotate(-90deg) translateX(-5px);
+}
+
+.menu-button.open .menu-icon:after {
+    transform: rotate(90deg) translateX(-5px);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #111;
+    transition: left 0.3s ease; /* Smooth sliding animation */
+    z-index: 999; /* Ensure menu is above other content */
+}
+
+.menu-open .menu {
+    left: 0; /* Slide into view */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.menu ul li a:hover {
+    color: #00f;
+}
+
+.main {
+    padding-top: 50px; /* Ensure content starts below header */
+}
+
+
