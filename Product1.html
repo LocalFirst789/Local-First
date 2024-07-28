@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Apex Bucket Hat</title>
+    <link rel="stylesheet" href="Product1.css">
+</head>
+<body>
+    <div class="product-container">
+        <h1>Nike Apex Bucket Hat</h1>
+        <div class="product-preview">
+            <img id="product-image" src="product4.png" alt="Product Image">
+                    </div>
+        <div class="option">
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="green">Military Camo Flash</option>
+                <option value="black">Black</option>
+                <option value="coco">CoCo Camo Flash</option>
+                 <option value="white">White</option>
+                <!-- Add more color options as needed -->
+            </select>
+        </div>
+        <div class="option">
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <!-- Add more size options as needed -->
+            </select>
+        </div>
+        <div class="option">
+            <label for="material">Material:</label>
+            <span id="material">Nike Apex Bucket Hat Polyester</span>
+        </div>
+        <div class="option">
+            <label for="price">Price:</label>
+            <span id="price">R800.00</span>
+        </div>
+        <a href="https://wa.me/+27711888087?text=Hello%20there!%20I%20Would%20like%20To%20Purchase%20Nike Apex Bucket Hat"><button id="add-to-cart" >Buy</button></a>
+    </div>
+  
+
+    <script src="Product1.js"></script>
+</body>
+<footer>
+  <h2><font color="green">Screenshort The Pop Up After Clicking The Buy Button</font></h2>
+  <p>&copy; 2024 Local First. All rights reserved.</p>
+    </footer>
+</html>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.product-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-preview {
+    margin-bottom: 20px;
+}
+
+.product-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, button {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#add-to-cart {
+    background-color: #0000ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 10px 20px;
+}
+
+#add-to-cart:hover {
+    background-color: #0000ff;
+}
+
+
+</style>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const colorSelect = document.getElementById('color');
+    const sizeSelect = document.getElementById('size');
+    const materialDisplay = document.getElementById('material');
+    const priceDisplay = document.getElementById('price');
+    const addToCartButton = document.getElementById('add-to-cart');
+    const productImage = document.getElementById('product-image');
+
+    // Product data
+    const products = {
+        green: {
+            material: 'Nike Apex Bucket Hat ,Polyester',
+            price: 800,
+            image: 'product4.png'
+        },
+        black: {
+            material: 'Nike Apex Bucket Hat ,Polyester',
+            price: 800,
+            image: 'product6.jpeg'
+        },
+        coco: {
+            material: 'Nike Apex Bucket Hat ,Polyester',
+            price: 800,
+            image: 'coco.png'
+            },
+        white: {
+            material: 'Nike Apex Bucket Hat ,Polyester',
+            price: 900,
+            image: 'white apex.jpg'
+        }
+        
+        // Add more colors as needed
+    };
+
+    // Initial setup
+    updateProductDetails();
+
+    // Event listeners
+    colorSelect.addEventListener('change', updateProductDetails);
+    sizeSelect.addEventListener('change', updateProductDetails);
+    addToCartButton.addEventListener('click', addToCart);
+
+    // Function to update product details based on selection
+    function updateProductDetails() {
+        const selectedColor = colorSelect.value;
+        const selectedSize = sizeSelect.value;
+
+        // Update material and price display
+        materialDisplay.textContent = products[selectedColor].material;
+        priceDisplay.textContent = `R${products[selectedColor].price.toFixed(2)}`;
+
+        // Update product image
+        productImage.src = products[selectedColor].image;
+    }
+
+    // Function to add selected product to cart
+    function addToCart() {
+        const selectedColor = colorSelect.value;
+        const selectedSize = sizeSelect.value;
+        const selectedProduct = {
+            color: selectedColor,
+            size: selectedSize,
+            material: products[selectedColor].material,
+            price: products[selectedColor].price
+        };
+
+        // Example: You can implement your cart functionality here
+        console.log('Added to cart:', selectedProduct);
+        alert(`Added to cart:\nColor: ${selectedProduct.color}\nSize: ${selectedProduct.size}\nMaterial: ${selectedProduct.material}\nPrice: R${selectedProduct.price.toFixed(2)}`);
+    }
+});
+
+
+</script>
