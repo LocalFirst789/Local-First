@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Way Winter Hat</title>
+    <link rel="stylesheet" href="Product1.css">
+</head>
+<body>
+    <div class="product-container">
+        <h1>K-Way Winter Hat</h1>
+        <div class="product-preview">
+            <img id="product-image" src="product4.png" alt="Product Image">
+                    </div>
+        <div class="option">
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="green">White</option>
+                <option value="black">Pink</option>
+                <option value="coco">Black</option>
+                 <option value="white">Light Blue</option>
+                <!-- Add more color options as needed -->
+            </select>
+        </div>
+        <div class="option">
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <!-- Add more size options as needed -->
+            </select>
+        </div>
+        <div class="option">
+            <label for="material">Material:</label>
+            <span id="material">K-Way Winter Hat</span>
+        </div>
+        <div class="option">
+            <label for="price">Price:</label>
+            <span id="price">R200.00</span>
+        </div>
+        <a href="https://wa.me/+27711888087?text=Hello%20there!%20I%20Would%20like%20To%20Purchase%20K-Way Talus Floopy Hat"><button id="add-to-cart" >Buy</button></a>
+    </div>
+  
+
+    <script src="Product1.js"></script>
+</body>
+<footer>
+  <p>&copy; 2024 Local First. All rights reserved.</p>
+    </footer>
+</html>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.product-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-preview {
+    margin-bottom: 20px;
+}
+
+.product-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, button {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#add-to-cart {
+    background-color: #0000ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 10px 20px;
+}
+
+#add-to-cart:hover {
+    background-color: #0000ff;
+}
+
+
+</style>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const colorSelect = document.getElementById('color');
+    const sizeSelect = document.getElementById('size');
+    const materialDisplay = document.getElementById('material');
+    const priceDisplay = document.getElementById('price');
+    const addToCartButton = document.getElementById('add-to-cart');
+    const productImage = document.getElementById('product-image');
+
+    // Product data
+    const products = {
+        green: {
+            material: 'K-Way Winter Hat ,Polyester',
+            price: 200,
+            image: '100210368_C09_1.jpeg'
+        },
+        black: {
+            material: 'K-Way Winter Hat ,Polyester',
+            price: 200,
+            image: '104890112_C36_2.jpeg'
+        },
+        coco: {
+            material: 'K-Way Winter Hat,Polyester',
+            price: 200,
+            image: '100210368_C01_2.jpeg'
+            },
+        white: {
+            material: 'K-Way Winter Hat ,Polyester',
+            price: 200,
+            image: '100210368_C65_2.jpeg'
+        }
+        
+        // Add more colors as needed
+    };
+
+    // Initial setup
+    updateProductDetails();
+
+    // Event listeners
+    colorSelect.addEventListener('change', updateProductDetails);
+    sizeSelect.addEventListener('change', updateProductDetails);
+    addToCartButton.addEventListener('click', addToCart);
+
+    // Function to update product details based on selection
+    function updateProductDetails() {
+        const selectedColor = colorSelect.value;
+        const selectedSize = sizeSelect.value;
+
+        // Update material and price display
+        materialDisplay.textContent = products[selectedColor].material;
+        priceDisplay.textContent = `R${products[selectedColor].price.toFixed(2)}`;
+
+        // Update product image
+        productImage.src = products[selectedColor].image;
+    }
+
+    // Function to add selected product to cart
+    function addToCart() {
+        const selectedColor = colorSelect.value;
+        const selectedSize = sizeSelect.value;
+        const selectedProduct = {
+            color: selectedColor,
+            size: selectedSize,
+            material: products[selectedColor].material,
+            price: products[selectedColor].price
+        };
+
+        // Example: You can implement your cart functionality here
+        console.log('Added to cart:', selectedProduct);
+        alert(`Added to cart:\nColor: ${selectedProduct.color}\nSize: ${selectedProduct.size}\nMaterial: ${selectedProduct.material}\nPrice: R${selectedProduct.price.toFixed(2)}`);
+    }
+});
+
+
+</script>
