@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men</title>
+    <link rel="stylesheet" href="LMA-TM.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Local First</div>
+        <div class="menu-button">
+            <div class="menu-icon"></div>
+        </div>
+    </header>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+          <li><a href="Home/Home.html">Home</a></li>
+          <li><a href="ProductCS.html">Exclusive Products</a></li>
+            <li><a href="https://wa.me/+27711888087?text=Hey,%20Tell%20Me%20About%20Local%20Model%20Advertisement">LocalModelAdvertisement</a></li>
+            <li><a href="Exclusive Products/ExProd.html">Products</a></li>
+            <li><a href="Aboutus.html">About Us</a></li>
+            <li><a href="https://wa.me/+27711888087">Contact</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Local First</h1>
+                <p>Elevate your style, online.</p>                
+            </div>
+        </section>
+ </div>
+
+    <div class="section">
+        <h2><font color="blue">K-Way Mens Straus Eco Fleece Top</font></h2>
+       <h2><font color="green">R449.99</font></h2>
+        <div class="slider" id="slider4">
+            <div class="slides">
+                <div class="slide"><a hef="https://example.com/13"><img src="Men/KFLC1.jpg" alt="Image 4-1"></a></div>
+                <div class="slide"><a hef="https://example.com/14"><img src="Men/KFLC2.jpg" alt="Image 4-2"></a></div>
+                <div class="slide"><a hrf="https://example.com/15"><img src="Men/KFLC3.jpg" alt="Image 4-3"></a></div>
+                <div class="slide"><a hrf="https://example.com/16"><img src="Men/KFLC4.jpg" alt="Image 4-4"></a></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1, 'slider4')">&#10094;</button>
+            <button class="next" onclick="moveSlide(1, 'slider4')">&#10095;</button>
+        </div>
+     <a href="https://wa.me/+27711888087?text=Hello%20there!%20I%20Would%20like%20To%20Purchase%20K-Way Men's Straus Eco Fleece Top" class="big-button">Buy</a>
+  
+    </div>  
+ </div>
+
+    <div class="section">
+        <h2><font color="blue">K-Way Men’s Hudson 3-in-1 Jacket<font color="pink">-For Ladies</font></font></h2>
+       <h2><font color="green">R1 949.99</font></h2>
+        <div class="slider" id="slider4">
+            <div class="slides">
+                <div class="slide"><a hef="https://example.com/13"><img src="Men/Screenshot_20240803_085710_Chrome.jpg" alt="Image 4-1"></a></div>
+                <div class="slide"><a hef="https://example.com/14"><img src="Men/Screenshot_20240803_085714_Chrome.jpg" alt="Image 4-2"></a></div>
+                <div class="slide"><a hrf="https://example.com/15"><img src="Men/Screenshot_20240803_085718_Chrome.jpg" alt="Image 4-3"></a></div>
+                <div class="slide"><a hrf="https://example.com/16"><img src="Men/Screenshot_20240803_085724_Chrome.jpg" alt="Image 4-4"></a></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1, 'slider4')">&#10094;</button>
+            <button class="next" onclick="moveSlide(1, 'slider4')">&#10095;</button>
+        </div>
+     <a href="https://wa.me/+27 79 300 3814?text=Hello%20there!%20I%20Would%20like%20To%20Purchase%20Women Nike Swoosh Dri Fit 1/4 zip" class="big-button">Buy</a>
+  
+    </div>
+<script>
+  function moveSlide(step, sliderId) {
+    const slider = document.getElementById(sliderId);
+    const slides = slider.querySelector('.slides');
+    const totalSlides = slides.querySelectorAll('.slide').length;
+    let slideIndex = parseInt(slides.getAttribute('data-index')) || 0;
+
+    slideIndex += step;
+
+    if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    } else if (slideIndex < 0) {
+        slideIndex = totalSlides - 1;
+    }
+
+    slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    slides.setAttribute('data-index', slideIndex);
+}
+
+// Initialize sliders
+document.querySelectorAll('.slider .slides').forEach((slide) => {
+    slide.setAttribute('data-index', 0);
+});
+
+  </script>
+</body>
+</html>
+  
+
+    <!-- JavaScript for menu button functionality -->
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const body = document.querySelector('body');
+
+        menuButton.addEventListener('click', () => {
+            body.classList.toggle('menu-open');
+        });
+    </script>
+   <style>
+
+  .body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    margin: 20px;
+}
+
+.slider {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+    font-size: 24px;
+    z-index: 100;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+  </style>
+  <style>
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+    background-color: #f0f0f0;
+}
+
+.big-button {
+    display: block;
+    padding: 10px 10px;
+    font-size: 15px;
+    color: white;
+    background-color: #009000;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.big-button:hover {
+    background-color: #0056b3;
+}
+</style>
+<style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            position: relative;
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+<head>Other Products</head>
+<body>
+    <div class="grid-container">
+      <div class="grid-item"><a hrelf="JordanApex.html/docs"><img src="Men/IMG-20240714-WA0432.jpg" alt="Image 1"></a></div>
+      <div class="grid-item"><a hrf="docs/Product1.html"><img src="Men/IMG-20240714-WA0176.jpg" alt="Image 2"></a></div>
+      <div class="grid-item"><a hef="#"><img src="Men/IMG-20240714-WA0241.jpg" alt="Image 2"></a></div>
+      <div class="grid-item"><a hef="#"><img src="Men/IMG-20240714-WA0391.jpg" alt="Image 2"></a></div>
+      <div class="grid-item"><a ref="#"><img src="Men/IMG-20240714-WA0441.jpg" alt="Image 1"></a></div>
+      <div class="grid-item"><a hrf="#"><img src="Men/IMG-20240714-WA0463.jpg" alt="Image 2"></a></div>
+      <div class="grid-item"><a hrf="#"><img src="Men/IMG-20240714-WA0083.jpg" alt="Image 2"></a></div>
+      <div class="grid-item"><a hef="#"><img src="Men/IMG-20240714-WA0119.jpg" alt="Image 2"></a></div>aa
+</body>
